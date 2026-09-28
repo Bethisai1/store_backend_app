@@ -9,7 +9,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
 
@@ -18,34 +18,19 @@ repositories {
 }
 
 dependencies {
-
-	// WEB
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-
-	// JPA + DATABASE
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	runtimeOnly 'com.mysql:mysql-connector-j'
-	runtimeOnly 'com.h2database:h2'
-
-	// SECURITY (optional but kept since you had it)
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-
-	// VALIDATION
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-	// DEVTOOLS
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 
-	// LOMBOK
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	// TESTING (correct single dependency)
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-	testCompileOnly 'org.projectlombok:lombok'
-	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
